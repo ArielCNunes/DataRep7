@@ -31,6 +31,12 @@ app.get('/api/movies', async (req, res) => {
   res.json(movies);
 });
 
+// Retrieve a specific movie by its ID
+app.get('/api/movie/:id', async (req, res) => {
+  const movie = await Movie.findById(req.params.id);
+  res.send(movie);
+});
+
 const cors = require('cors');
 app.use(cors());
 
