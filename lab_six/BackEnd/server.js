@@ -4,7 +4,9 @@ const port = 4000;
 
 // Connecting to mongoDB
 const mongoose = require('mongoose');
-mongoose.connect('my_db_connection_string');
+mongoose.connect('mongodb+srv://admin:admin@lab07.kbvd9.mongodb.net/lab07?retryWrites=true&w=majority', {
+})
+.then(() => console.log('Connected to MongoDB Atlas!'));
 
 // Movie schema
 const movieSchema = new mongoose.Schema({
