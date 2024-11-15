@@ -6,6 +6,15 @@ const port = 4000;
 const mongoose = require('mongoose');
 mongoose.connect('my_db_connection_string');
 
+// Movie schema
+const movieSchema = new mongoose.Schema({
+  title: String,
+  year: String,
+  poster: String
+});
+
+const Movie = mongoose.model('Movie', movieSchema);
+
 const cors = require('cors');
 app.use(cors());
 
