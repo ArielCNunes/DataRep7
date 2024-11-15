@@ -2,6 +2,10 @@ const express = require('express');
 const app = express();
 const port = 4000;
 
+// Connecting to mongoDB
+const mongoose = require('mongoose');
+mongoose.connect('my_db_connection_string');
+
 const cors = require('cors');
 app.use(cors());
 
