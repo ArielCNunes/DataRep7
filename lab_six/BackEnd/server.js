@@ -23,7 +23,13 @@ app.post('/api/movies', async (req, res) => {
   await newMovie.save();
 
   res.status(201).json({ message: 'Movie created successfully', movie: newMovie });
-})
+});
+
+// Fetch all movie records
+app.get('/api/movies', async (req, res) => {
+  const movies = await Movie.find({});
+  res.json(movies);
+});
 
 const cors = require('cors');
 app.use(cors());
